@@ -1,14 +1,13 @@
-{% set name = "faampy" %}
-{% set version = "v0.1.4" %}
+{% set version = "v0.1.5" %}
 
 package:
-    name: {{ name|lower }}
+    name: faampy
     version: {{ version }}
 
 source:
     fn: faampy-{{ version }}.tar.gz
     url: https://github.com/ncasuk/faampy/archive/{{ version }}.tar.gz
-    sha256: 9540646948656051d484e17b0df2fc02c83eff411137f956a7a2f523e0eb30dc
+    sha256: 65c9803d6ae127f244a54864cacb9c36d899d9640d35ede0054e8d7026f88de4
 
 build:
     skip: True  # [py3k]
@@ -27,22 +26,19 @@ requirements:
         - configparser
         - ephem
         - matplotlib >=1.4.0
-        - setuptools
         - netcdf4 >=1.0
         - numpy
         - scipy
         - pandas
-        - gdal
         - exifread
         - fiona
-        - gdal
         - georaster
         - haversine
         - pillow
         - libspatialite
         - seaborn
         - simplekml
-        - sqlite
+        - sqlite ==3.13.0
         - xarray
 
 test:
@@ -52,6 +48,7 @@ test:
 about:
     home: http://www.faam.ac.uk
     license: LGPLv3
+    license_file: COPYING
     summary: 'FAAM aircraft data processing module'
 
 extra:
